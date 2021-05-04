@@ -15,8 +15,8 @@
   "scripts": {
     "start": "nodemon server.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["nodejs", "start2impact", "Pollution Reporter"],
+  "author": "Matteo Minerva",
   "license": "ISC",
   "engines": {
     "node": "14.15.1"
