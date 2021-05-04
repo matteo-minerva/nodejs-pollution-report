@@ -14,18 +14,18 @@
 <br />
 <p align="center">
   <a href="https://canostra.000webhostapp.com/">
-    <img src="/images/logo.png" alt="Screenshot" style="border-radius: 9999px;">
+    <img src="/logo.png" alt="Screenshot" style="border-radius: 9999px;">
   </a>
 
-  <h3 align="center">Ca'Nostra | WordPress Website</h3>
+  <h3 align="center">Pollution Reporter</h3>
 
   <p align="center">
-    Project created for WordPress Super Guide
+    Project created for NodeJS Super Guide
     <br />
     <br />
     <a href="https://canostra.000webhostapp.com/">Live Demo</a>
     ·
-    <a href="https://github.com/matteo-minerva/wordpress-canostra/issues">Report Bug</a>
+    <a href="https://github.com/matteo-minerva/nodejs-pollution-report/issues">Report Bug</a>
   </p>
 </p>
 
@@ -52,49 +52,64 @@
 
 [![Website Screenshot][product-screenshot]](https://example.com)
 
-For this project, you have to imagine that you are in charge of the digitalization process of a classic offline business (artisans, clothing stores, bars, etc.).
+Make a Node application that helps report polluted places nearby.
 
-Your task is to create the website of the business, putting all your imagination and helping it to enter the digital world thanks to your skills.
+Requirements:
 
-The compulsory requests that we make are three:
-- There must be a contact form on the site.
-- There must be an integrated map to allow customers to immediately see where the business is located.
-- You must create a custom theme from scratch (otherwise it's too easy to use those already available!).
+- You will be able to provide the application with a graphical interface, or you will be able to implement only the API, this at your complete discretion;
 
-For the rest, you can choose any type of store or service. Let your creative streak run wild!
+- In order to use it, you will need to make available the upload of photos certifying the environmental pollution taking place, and the address/location of the same;
+
+- The application will then have to provide an endpoint to display the list of all the reported places.
 
 ### Built With
 
-- [Bootstrap](https://getbootstrap.com)
-- [Wordpress](https://wordpress.org)
+- [NodeJS](https://nodejs.org/)
+- [ExpressJS](https://expressjs.com/)
 
 <!-- GETTING STARTED -->
 
 ## Getting Started
 
-1. Download and install [Wordpress](https://wordpress.org) to your local machine or server
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/matteo-minerva/wordpress-canostra
+   git clone https://github.com/matteo-minerva/nodejs-pollution-report
    ```
-3. Move `20210430_canostra_98a511042d5a5e862419_20210430151246_archive` and `installer.php` to Wordpress main directory.
-4. Install [Duplicator](https://it.wordpress.org/plugins/duplicator/) plugin and go to
+2. Setup a DB (eg. using XAMPP or w/e).
+3. Import the project table from the migration file `nodejs_matteo_minerva.sql`.
+4. Create a `.env` file and fill it like so
+   ```env
+   DB_HOST=YOUR_HOST
+   DB_USER=YOUR_USERNAME
+   DB_PASSWORD=YOUR_PASSWORD
+   DB_NAME=YOUR_DB_NAME
    ```
-   yourwebsiteURL.domain/installer.php
-   ```
-5. Follow the setup wizard.
+5. Install all the missing dependecies running
 
-Note: more info on the [developers website](https://snapcreek.com/duplicator/docs/quick-start/?utm_source=duplicator_free&utm_medium=wordpress_plugin&utm_content=package_built_install_help&utm_campaign=duplicator_free#quick-040-q)
+```node
+npm install
+```
 
-<!-- Usage -->
+6. Now you should be able to run the server with nodemon
+
+```node
+nodemon server.js
+```
+
+<!-- USAGE -->
 
 ## Usage
 
-In order to use it, you must login as:
+You can access the form to submit data by visiting
 
-```text
-username: admin
-password: K@g2DSupYfv#1^i*mTgSUyIR
+```url
+http://localhost:3000/
+```
+
+The server has only one endpoint that allows the user to see the full list of reports
+
+```url
+http://localhost:3000/api/all
 ```
 
 <!-- CONTACT -->
@@ -109,14 +124,17 @@ start2impact personal page: https://talent.start2impact.it/profile/matteo-minerv
 
 ## Acknowledgements
 
-- [Bootstrap Navwalker](https://github.com/wp-bootstrap/wp-bootstrap-navwalker/)
-- [Font Awesome](https://fontawesome.com)
+- [dotenv](https://github.com/motdotla/dotenv)
+- [EJS](https://ejs.co/)
+- [Multer](https://github.com/expressjs/multer)
+- [mysql](https://github.com/mysqljs/mysql)
+- [nodemon](https://github.com/remy/nodemon)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[issues-shield]: https://img.shields.io/github/issues/matteo-minerva/wordpress-canostra/repo.svg?style=for-the-badge
-[issues-url]: https://github.com/matteo-minerva/wordpress-canostra/issues
+[issues-shield]: https://img.shields.io/github/issues/matteo-minerva/nodejs-pollution-report/repo.svg?style=for-the-badge
+[issues-url]: https://github.com/matteo-minerva/nodejs-pollution-report/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/m-minerva
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: /screenshot.png
