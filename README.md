@@ -50,7 +50,7 @@
 
 ## About The Project
 
-[![Website Screenshot][product-screenshot]](https://example.com)
+[![Website Screenshot][product-screenshot]](https://pollution-reporter.herokuapp.com/)
 
 Make a Node application that helps report polluted places nearby.
 
@@ -79,12 +79,13 @@ Requirements:
 3. Import the project table from the migration file `nodejs_matteo_minerva.sql`.
 4. Create a `.env` file and fill it like so
 
-   ```env
-   DB_HOST=YOUR_HOST
-   DB_USER=YOUR_USERNAME
-   DB_PASSWORD=YOUR_PASSWORD
-   DB_NAME=YOUR_DB_NAME
-   ```
+```env
+DB_HOST=YOUR_HOST
+DB_USER=YOUR_USERNAME
+DB_PASSWORD=YOUR_PASSWORD
+DB_NAME=YOUR_DB_NAME
+DB_PORT=YOUR_DB_PORT
+```
 
 5. Install all the missing dependecies running
 
