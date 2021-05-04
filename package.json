@@ -13,7 +13,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "keywords": ["nodejs", "start2impact", "Pollution Reporter"],
   "author": "Matteo Minerva",
