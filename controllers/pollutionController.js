@@ -5,7 +5,7 @@ const Pollution = {
 	//function to query all items
 	index: (req, res) => {
 		const results = db.query(
-			"SELECT * from Pollution",
+			"SELECT * from pollution",
 			(error, results, fields) => {
 				if (error) {
 					throw error;
@@ -37,7 +37,7 @@ const Pollution = {
 		};
 
 		const results = db.query(
-			`INSERT INTO Pollution (location, photographSrc) VALUES ('${data.location}', '${data.image}');`,
+			`INSERT INTO pollution (location, photographSrc) VALUES ('${data.location}', '${data.image}');`,
 			(error, results, fields) => {
 				if (error) {
 					throw error;
