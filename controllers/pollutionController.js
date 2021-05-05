@@ -17,13 +17,7 @@ const Pollution = {
 				resultJson.forEach((item) => {
 					data.push({
 						...item,
-						/* Check if works on remote too */
-						photographSrc: path.join(
-							req.protocol + ":",
-							/*req.get("host"), */
-							"uploads",
-							item.photographSrc
-						),
+						photographSrc: path.join("uploads", item.photographSrc),
 					});
 				});
 
