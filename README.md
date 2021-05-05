@@ -13,7 +13,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://canostra.000webhostapp.com/">
+  <a href="pollution-reporter.herokuapp.com">
     <img src="/logo.png" alt="Screenshot" style="border-radius: 9999px;">
   </a>
 
@@ -23,7 +23,7 @@
     Project created for NodeJS Super Guide
     <br />
     <br />
-    <a href="https://canostra.000webhostapp.com/">Live Demo</a>
+    <a href="pollution-reporter.herokuapp.com">Live Demo</a>
     ·
     <a href="https://github.com/matteo-minerva/nodejs-pollution-report/issues">Report Bug</a>
   </p>
@@ -93,10 +93,10 @@ DB_PORT=YOUR_DB_PORT
 npm install
 ```
 
-6. Now you should be able to run the server with nodemon
+6. Now you should be able to run the server with
 
 ```node
-nodemon server.js
+npm start
 ```
 
 <!-- USAGE -->
