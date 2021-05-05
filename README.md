@@ -89,6 +89,12 @@ DB_NAME=YOUR_DB_NAME
 DB_PORT=YOUR_DB_PORT
 ```
 
+You can also declare a port to run Node on, if you really need to
+
+```env
+PORT=YOUR_PORT
+```
+
 5. Install all the missing dependecies running
 
 ```node
