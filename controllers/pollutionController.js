@@ -3,13 +3,18 @@ const path = require("path");
 
 const Pollution = {
 	//function to query all items
-	index: (req, res) => {
+	index: (req, res, next) => {
 		const results = db.query(
 			"SELECT * from pollution",
 			(error, results, fields) => {
 				if (error) {
 					console.log(error.stack);
-					res.status("500").send("Something went wrong");
+					res.status("500").render("error.ejs", {
+						error: {
+							name: "Error 404",
+							message: "Page not found",
+						},
+					});
 				}
 
 				let resultJson = JSON.parse(JSON.stringify(results));
@@ -29,7 +34,13 @@ const Pollution = {
 
 	addRow: (req, res, next) => {
 		if (!req.file) {
-			return res.status(400).send("No files were uploaded");
+			console.log(error.stack);
+			res.status("400").render("error.ejs", {
+				error: {
+					name: "Error 404",
+					message: "No file were selected",
+				},
+			});
 		}
 
 		const data = {
@@ -42,7 +53,12 @@ const Pollution = {
 			(error, results, fields) => {
 				if (error) {
 					console.log(error.stack);
-					res.status("500").send("Something went wrong");
+					res.status("500").render("error.ejs", {
+						error: {
+							name: error.name,
+							message: error.message,
+						},
+					});
 				}
 				console.log("Data inserted");
 

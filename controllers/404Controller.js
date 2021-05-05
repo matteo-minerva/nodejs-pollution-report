@@ -1,4 +1,8 @@
 module.exports = (req, res, next) => {
-	console.log("Error 404");
-	res.status(404).render("404.ejs");
+	res.status(404).render("error.ejs", {
+		error: {
+			name: "Error 404",
+			message: "Page not found",
+		},
+	});
 };
