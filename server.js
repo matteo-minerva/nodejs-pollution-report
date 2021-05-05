@@ -4,8 +4,8 @@ const express = require("express");
 const routes = require("./routes");
 const app = express();
 
-const sslRedirect = require("heroku-ssl-redirect").default;
-app.use(sslRedirect());
+// const sslRedirect = require("heroku-ssl-redirect").default;
+// app.use(sslRedirect());
 
 require("./routes");
 
