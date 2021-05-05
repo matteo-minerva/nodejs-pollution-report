@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mag 04, 2021 alle 18:10
+-- Creato il: Mag 05, 2021 alle 13:59
 -- Versione del server: 10.4.18-MariaDB
 -- Versione PHP: 8.0.3
 
@@ -38,12 +38,12 @@ CREATE TABLE `pollution` (
 --
 
 INSERT INTO `pollution` (`id`, `location`, `photographSrc`) VALUES
-(1, 'Milan, Italy', 'photograph_1620141676601.jpg'),
-(2, 'Ghaziabad, India', 'photograph_1620142327323.jpg'),
-(3, 'Hotan, China', 'photograph_1620142348381.jpg'),
-(4, 'Lahore, Pakistan', 'photograph_1620142373978.jpg'),
-(5, 'Manikganj, Bangladesh', 'photograph_1620142395956.jpg'),
-(6, 'Pai, Thailand', 'photograph_1620142420134.jpg');
+(1, 'Milan, Italy', 'photograph_f55bdb9b-6c78-4497-970e-809f6664edb0.jpg'),
+(2, 'Ghaziabad, India', 'photograph_39d376b1-c47b-4acc-b34c-b1915ffbfbe6.jpg'),
+(3, 'Hotan, China', 'photograph_90a00497-3510-421c-8ab3-b485f7c80483.jpg'),
+(4, 'Lahore, Pakistan', 'photograph_8d01045d-3659-45d7-a89a-2170cadf9f5c.jpg'),
+(5, 'Manikganj, Bangladesh', 'photograph_9a126f08-75c3-4f1e-b105-f0967fdc4d18.jpg'),
+(6, 'Pai, Thailand', 'photograph_c0437ed3-2b17-44ef-b446-2f68b703c179.jpg');
 
 --
 -- Indici per le tabelle scaricate
