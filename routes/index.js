@@ -11,9 +11,13 @@ const upload = multer({ storage: storage });
 
 module.exports = (app) => {
 	const pollution = require("../controllers/pollutionController");
-	const siteRoot = require("../routes/root");
+	const home = require("../controllers/homeController");
+	const page404 = require("../controllers/404Controller");
 
-	app.get("/", siteRoot);
+	app.get("/", home);
+
 	app.post("/api", upload.single("photograph"), pollution.addRow);
 	app.get("/api/all", pollution.index);
+
+	app.get("*", page404);
 };

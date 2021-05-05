@@ -8,7 +8,8 @@ const Pollution = {
 			"SELECT * from pollution",
 			(error, results, fields) => {
 				if (error) {
-					throw error;
+					console.log(error.stack);
+					res.status("500").send("Something went wrong");
 				}
 
 				let resultJson = JSON.parse(JSON.stringify(results));
@@ -40,7 +41,8 @@ const Pollution = {
 			`INSERT INTO pollution (location, photographSrc) VALUES ('${data.location}', '${data.image}');`,
 			(error, results, fields) => {
 				if (error) {
-					throw error;
+					console.log(error.stack);
+					res.status("500").send("Something went wrong");
 				}
 				console.log("Data inserted");
 
