@@ -13,7 +13,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="pollution-reporter.herokuapp.com">
+  <a href="https://pollution-reporter.herokuapp.com/">
     <img src="/logo.png" alt="Screenshot" style="border-radius: 9999px;">
   </a>
 
@@ -23,7 +23,7 @@
     Project created for NodeJS Super Guide
     <br />
     <br />
-    <a href="pollution-reporter.herokuapp.com">Live Demo</a>
+    <a href="https://pollution-reporter.herokuapp.com/">Live Demo</a>
     ·
     <a href="https://github.com/matteo-minerva/nodejs-pollution-report/issues">Report Bug</a>
   </p>
