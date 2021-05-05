@@ -72,9 +72,11 @@ Requirements:
 ## Getting Started
 
 1. Clone the repo
-   ```sh
-   git clone https://github.com/matteo-minerva/nodejs-pollution-report
-   ```
+
+```sh
+git clone https://github.com/matteo-minerva/nodejs-pollution-report
+```
+
 2. Setup a DB (eg. using XAMPP or w/e).
 3. Import the project table from the migration file `nodejs_matteo_minerva.sql`.
 4. Create a `.env` file and fill it like so
