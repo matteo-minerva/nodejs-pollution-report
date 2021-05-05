@@ -134,6 +134,7 @@ start2impact personal page: https://talent.start2impact.it/profile/matteo-minerv
 - [Multer](https://github.com/expressjs/multer)
 - [mysql](https://github.com/mysqljs/mysql)
 - [nodemon](https://github.com/remy/nodemon)
+- [uuid](https://github.com/uuidjs/uuid)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->

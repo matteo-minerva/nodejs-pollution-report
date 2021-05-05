@@ -11,14 +11,17 @@ const Pollution = {
 					console.log(error.stack);
 					res.status("500").render("error.ejs", {
 						error: {
-							name: "Error 404",
-							message: "Page not found",
+							number: error.errno,
+							message: error.sqlMessage,
 						},
 					});
+					return;
 				}
 
+				/* result needs to get parsed to be displayed as JSON */
 				let resultJson = JSON.parse(JSON.stringify(results));
 
+				/* json gets constructed */
 				let data = [];
 				resultJson.forEach((item) => {
 					data.push({
@@ -32,22 +35,26 @@ const Pollution = {
 		);
 	},
 
+	//function to add a new row
 	addRow: (req, res, next) => {
-		if (!req.file) {
-			console.log(error.stack);
-			res.status("400").render("error.ejs", {
+		/* checks if the file is an img, if not error page gets displayed */
+		const ext = path.extname(req.file.originalname);
+		if (ext !== ".png" && ext !== ".jpg" && ext !== ".gif" && ext !== ".jpeg") {
+			return res.status("500").render("error.ejs", {
 				error: {
-					name: "Error 404",
-					message: "No file were selected",
+					number: 500,
+					message: "Only images are allowed",
 				},
 			});
 		}
 
+		/* format data as json */
 		const data = {
 			location: req.body.location,
 			image: req.file.filename,
 		};
 
+		/* actual query */
 		const results = db.query(
 			`INSERT INTO pollution (location, photographSrc) VALUES ('${data.location}', '${data.image}');`,
 			(error, results, fields) => {
@@ -55,13 +62,15 @@ const Pollution = {
 					console.log(error.stack);
 					res.status("500").render("error.ejs", {
 						error: {
-							name: error.name,
-							message: error.message,
+							number: error.errno,
+							message: error.sqlMessage,
 						},
 					});
+					return;
 				}
 				console.log("Data inserted");
 
+				/* JSON gets displayed */
 				res.json({
 					message: "success",
 					data: { ...data },
