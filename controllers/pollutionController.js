@@ -33,28 +33,24 @@ const Pollution = {
 				res.json(data);
 			}
 		);
-	},
+	} /* end index() */,
 
 	//function to add a new row
 	addRow: (req, res, next) => {
-		/* checks if the file is an img, if not error page gets displayed */
-		const ext = path.extname(req.file.originalname);
-		if (ext !== ".png" && ext !== ".jpg" && ext !== ".gif" && ext !== ".jpeg") {
+		if (req.errorObj) {
 			return res.status("500").render("error.ejs", {
 				error: {
-					number: 500,
-					message: "Only images are allowed",
+					number: req.errorObj.number,
+					message: req.errorObj.message,
 				},
 			});
-		}
+		} /* endif */
 
-		/* format data as json */
 		const data = {
 			location: req.body.location,
-			image: req.file.filename,
+			photographSrc: path.join("uploads", req.file.filename),
 		};
 
-		/* actual query */
 		const results = db.query(
 			`INSERT INTO pollution (location, photographSrc) VALUES ('${data.location}', '${data.image}');`,
 			(error, results, fields) => {
@@ -70,14 +66,13 @@ const Pollution = {
 				}
 				console.log("Data inserted");
 
-				/* JSON gets displayed */
 				res.json({
 					message: "success",
 					data: { ...data },
 				});
 			}
-		);
-	},
+		); /* end query */
+	} /* end addRow() */,
 };
 
 module.exports = Pollution;
